@@ -1,5 +1,5 @@
 const HeaderElement = ({ title }) => {
-  return <span>{title}</span>;
+  return <span className="HeaderElement">{title}</span>;
 };
 
 export default HeaderElement;

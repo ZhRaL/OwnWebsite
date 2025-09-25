@@ -6,6 +6,8 @@ const Header = () => {
       <HeaderElement title="Home" />
       <HeaderElement title="About me" />
       <HeaderElement title="Projects" />
+      <HeaderElement title="Technologies" />
+      <HeaderElement title="Contact" />
     </div>
   );
 };
