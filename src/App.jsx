@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import Header from './Components/Header';
 import Aboutme from './Components/Aboutme';
-import Contact from './Components/Contact';
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
