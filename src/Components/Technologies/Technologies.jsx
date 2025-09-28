@@ -1,14 +1,22 @@
 const techList = [
   { name: 'React', category: 'Frontend' },
-  { name: 'TanStack Query', category: 'Frontend' },
-  { name: 'TanStack Routing', category: 'Frontend' },
+  { name: 'Next.js', category: 'Frontend' },
+  { name: 'Tailwind CSS', category: 'Frontend' },
+
   { name: '.NET', category: 'Backend' },
+  { name: 'ASP.NET Core', category: 'Backend' },
   { name: 'EF Core', category: 'Backend' },
-  { name: 'JWT Authentication', category: 'Security' },
-  { name: 'OAuth', category: 'Security' },
-  { name: 'Stripe', category: 'E-Commerce' },
+  { name: 'SignalR', category: 'Backend' },
+
   { name: 'PostgreSQL', category: 'Database' },
-  { name: 'MySQL', category: 'Database' },
+  { name: 'Redis', category: 'Database' },
+
+  { name: 'JWT Authentication', category: 'Security' },
+  { name: 'OAuth2 / OpenID Connect', category: 'Security' },
+
+  { name: 'Docker', category: 'DevOps' },
+  { name: 'Azure', category: 'DevOps' },
+  { name: 'GitHub Actions', category: 'DevOps' },
 ];
 
 const categoryColors = {
@@ -17,6 +25,7 @@ const categoryColors = {
   Security: 'bg-red-100 text-red-800',
   'E-Commerce': 'bg-purple-100 text-purple-800',
   Database: 'bg-yellow-100 text-yellow-800',
+  DevOps: 'bg-purple-200 text-purple-800',
 };
 
 const Technologies = () => {
