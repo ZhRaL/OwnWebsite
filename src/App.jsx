@@ -3,18 +3,10 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import Header from './Components/Header';
-import Aboutme from './Components/Aboutme';
-import Contact from './Components/Contact/Contact';
+import AppRouter from './router';
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Aboutme />
-
-      <Contact />
-    </>
-  );
+  return <AppRouter />;
 }
 
 export default App;
