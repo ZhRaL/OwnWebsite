@@ -21,7 +21,7 @@ const categoryColors = {
 
 const Technologies = () => {
   return (
-    <section className="max-w-3xl mx-auto px-4 py-8">
+    <section id="technologies" className="max-w-3xl mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold mb-8 text-blue-900">
         Technologies I Use
       </h2>

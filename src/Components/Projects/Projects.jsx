@@ -67,8 +67,15 @@ const ProjectCard = ({ project, onClick }) => {
 };
 
 const ProjectModal = ({ project, onClose }) => (
-  <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-    <div className="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full relative">
+  <div
+    className="fixed inset-0 flex items-center justify-center z-50"
+    style={{ background: 'rgba(0, 0, 0, 0.6)' }}
+    onClick={onClose}
+  >
+    <div
+      className="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full relative"
+      onClick={(e) => e.stopPropagation()}
+    >
       <button
         className="absolute top-2 right-2 text-gray-500 hover:text-blue-700 text-2xl"
         onClick={onClose}
@@ -99,7 +106,7 @@ const Projects = () => {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section className="max-w-5xl mx-auto px-4 py-8">
+    <section id="projects" className="max-w-5xl mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold mb-8 text-blue-900">My Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {projects.map((project, idx) => (

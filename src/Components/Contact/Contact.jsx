@@ -22,7 +22,7 @@ const Contact = () => {
   const isDisabled = !form.name.trim() || !form.email.trim();
 
   return (
-    <>
+    <section id="contact" className="max-w-3xl mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold mb-8 text-blue-900">Contact</h2>
       <p>
         {' '}
@@ -137,7 +137,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-    </>
+    </section>
   );
 };
 

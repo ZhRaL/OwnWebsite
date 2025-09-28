@@ -42,14 +42,31 @@
 }
 
 .header {
-  font-size: 2em;
-  font-weight: bold;
-  margin: 2rem 0;
-  background: #0c1cff; /* Hintergrundfarbe */
-  color: #fff; /* Textfarbe */
-  display: flex; /* Horizontale Anordnung */
-  align-items: center; /* Vertikal zentrieren */
-  padding: 1rem 2rem; /* Innenabstand */
-  gap: 2rem; /* Abstand zwischen Elementen */
-  border-radius: 0.5rem; /* Abgerundete Ecken (optional) */
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: 0;
+  background: #fff; /* Modern: weißer Hintergrund */
+  color: #222;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.48); /* Sanfter Schatten */
+}
+
+.HeaderElement {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: #1a237e;
+  background: transparent;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.HeaderElement:hover {
+  background: #e3f2fd; /* Sanftes Blau auf Hover */
+  box-shadow: 0 2px 8px 0 rgba(33, 150, 243, 0.08); /* Leichter blauer Schatten */
+  color: #1565c0;
 }
