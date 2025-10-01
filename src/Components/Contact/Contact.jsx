@@ -14,30 +14,29 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const encode = (data) =>
+    Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&');
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-
+    const data = { 'form-name': 'contact', ...form };
     fetch('/', {
       method: 'POST',
-      body: formData,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode(data),
     })
       .then(() => {
-        alert('Danke, deine Nachricht wurde gesendet!');
-
-        // Formular zurücksetzen
-        setForm({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          message: '',
-        });
+        alert(
+          'Danke, deine Nachricht wurde erfolgreich gesendet! Have a nice day :)'
+        );
+        setForm({ name: '', email: '', company: '', phone: '', message: '' });
       })
-      .catch((error) => {
-        alert('Es ist ein Fehler passiert: ' + error);
-      });
+      .catch((error) => alert('Es ist ein Fehler aufgetreten: ' + error));
   };
 
   const isDisabled = !form.name.trim() || !form.email.trim();
