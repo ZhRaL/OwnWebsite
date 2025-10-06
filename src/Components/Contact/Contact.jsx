@@ -14,31 +14,12 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-
-    fetch('/', {
-      method: 'POST',
-      body: formData,
-    })
-      .then(() => {
-        alert('Danke, deine Nachricht wurde gesendet!');
-
-        // Formular zurücksetzen
-        setForm({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          message: '',
-        });
-      })
-      .catch((error) => {
-        alert('Es ist ein Fehler passiert: ' + error);
-      });
-  };
+  const encode = (data) =>
+    Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&');
 
   const isDisabled = !form.name.trim() || !form.email.trim();
 
@@ -53,14 +34,14 @@ const Contact = () => {
       <p>E-mail: info@bastidev.com</p>
       <p> or use this amazing form:</p>
       <form
-        name="contact"
-        method="POST"
+        name="contact v1"
+        method="post"
         data-netlify="true"
-        onSubmit={handleSubmit}
+        onSubmit="submit"
         className="flex flex-col gap-5 w-full"
       >
         {/* hidden field, wichtig für Netlify */}
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact v1" />
 
         <div className="flex flex-row gap-5 w-full">
           {/* Linke Spalte */}
