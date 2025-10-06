@@ -20,6 +20,35 @@ function App() {
         style={{ background: 'rgba(255,255,255,0.75)' }}
       >
         <Aboutme />
+        <form name="contact" method="POST" netlify>
+          <p>
+            <label>
+              Your Name: <input type="text" name="name" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Email: <input type="email" name="email" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Role:{' '}
+              <select name="role[]" multiple>
+                <option value="leader">Leader</option>
+                <option value="follower">Follower</option>
+              </select>
+            </label>
+          </p>
+          <p>
+            <label>
+              Message: <textarea name="message"></textarea>
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
         <div className="my-8 flex justify-center w-full">
           <div className="w-2/3 h-0.5 bg-gray-300 rounded"></div>
         </div>

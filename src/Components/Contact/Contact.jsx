@@ -14,13 +14,6 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const encode = (data) =>
-    Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-      )
-      .join('&');
-
   const isDisabled = !form.name.trim() || !form.email.trim();
 
   return (
