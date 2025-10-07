@@ -26,15 +26,8 @@ const Contact = () => {
       </p>
       <p>E-mail: info@bastidev.com</p>
       <p> or use this amazing form:</p>
-      <form
-        name="contact v1"
-        method="post"
-        data-netlify="true"
-        onSubmit="submit"
-        className="flex flex-col gap-5 w-full"
-      >
-        {/* hidden field, wichtig für Netlify */}
-        <input type="hidden" name="form-name" value="contact v1" />
+      <form name="contact" method="post" className="flex flex-col gap-5 w-full">
+        <input type="hidden" name="form-name" value="contact" />
 
         <div className="flex flex-row gap-5 w-full">
           {/* Linke Spalte */}
