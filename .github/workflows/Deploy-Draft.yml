@@ -1,4 +1,4 @@
-name: Deploy to Netlify
+name: Deploy-Draft to Netlify
 
 on:
   workflow_dispatch:   # erlaubt manuelles Starten im Actions-Tab
