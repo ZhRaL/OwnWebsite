@@ -18,14 +18,13 @@ const Contact = () => {
 
   return (
     <section id="contact" className="max-w-3xl mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-8 text-blue-900">Contact</h2>
+      <h2 className="text-3xl font-bold mb-8 text-blue-900">Kontakt</h2>
       <p>
-        {' '}
-        if you are interested in getting in touch with me, to raise your project
-        to the next level, please dont hesitate to ask!
+        Wenn du Interesse hast, mit mir in Kontakt zu treten, um dein Projekt
+        voranzubringen, freue ich mich auf deine Nachricht!
       </p>
-      <p>E-mail: info@bastidev.com</p>
-      <p> or use this amazing form:</p>
+      <p>E-Mail: info@alpha-coding.dev</p>
+      <p>Oder nutze das folgende Formular:</p>
       <form name="contact" method="post" className="flex flex-col gap-5 w-full">
         <input type="hidden" name="form-name" value="contact" />
 
@@ -52,7 +51,7 @@ const Contact = () => {
               className="font-bold font-sans text-left text-blue-900"
               htmlFor="email"
             >
-              E-mail:<span className="text-red-500 ml-1">*</span>
+              E-Mail:<span className="text-red-500 ml-1">*</span>
             </label>
             <input
               className="rounded-lg bg-blue-100 shadow-lg shadow-blue-500/50 pl-3 py-2 w-full"
@@ -71,7 +70,7 @@ const Contact = () => {
               className="font-bold font-sans text-left text-blue-900"
               htmlFor="company"
             >
-              Company:
+              Firma:
             </label>
             <input
               className="rounded-lg bg-blue-100 shadow-lg shadow-blue-500/50 pl-3 py-2 w-full"
@@ -86,7 +85,7 @@ const Contact = () => {
               className="font-bold font-sans text-left text-blue-900"
               htmlFor="phone"
             >
-              Phone number:
+              Telefonnummer:
             </label>
             <input
               className="rounded-lg bg-blue-100 shadow-lg shadow-blue-500/50 pl-3 py-2 w-full"
@@ -103,7 +102,7 @@ const Contact = () => {
           className="font-bold font-sans text-left text-blue-900"
           htmlFor="message"
         >
-          Your Message:
+          Nachricht:
         </label>
         <textarea
           className="rounded-lg bg-blue-100 shadow-lg shadow-blue-500/50 pl-3 py-2 w-full"
@@ -123,7 +122,7 @@ const Contact = () => {
           }`}
           disabled={isDisabled}
         >
-          Send Message
+          Nachricht senden
         </button>
       </form>
     </section>
