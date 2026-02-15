@@ -1,6 +1,9 @@
 const Home = () => {
   return (
     <section id="aboutme" className="max-w-5xl mx-auto px-4 py-8">
+      <h2 className="text-3xl font-bold mb-8 text-blue-900">Webseite im Aufbau </h2>
+<p className="mb-3 text-lg"> Die Seite ist noch im Aufbau, demnach ist Inhalt noch unvollständig und kann Fehler enthalten!!</p>
+    
       <h2 className="text-3xl font-bold mb-8 text-blue-900">Über mich</h2>
       <div className="text-lg text-left">
         <p className="mb-3 text-lg">
