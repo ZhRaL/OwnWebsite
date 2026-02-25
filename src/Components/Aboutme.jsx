@@ -4,26 +4,28 @@ const Home = () => {
       <h2 className="text-3xl font-bold mb-8 text-blue-900">Über mich</h2>
       <div className="text-lg text-left">
         <p className="mb-3 text-lg">
-          Hi, ich bin Basti 👋, ein{' '}
-          <strong>32-jähriger Fullstack-Entwickler</strong> aus Deutschland,
-          spezialisiert auf <strong>.NET</strong> und <strong>React</strong>.
+          Hallo, ich bin Basti 👋, 32 Jahre alt und arbeite als
+          <strong> Fullstack-Entwickler</strong> aus Deutschland. Meine
+          Schwerpunkte liegen auf <strong>.NET</strong> und{' '}
+          <strong>React</strong>. Ich bin überwiegend im Backend tätig und fühle
+          mich dort besonders zuhause.
         </p>
         <p className="mb-3">
-          Meine Leidenschaft ist das Entwickeln von Lösungen, die echten
-          Mehrwert für Kunden schaffen. Ich lege Wert auf{' '}
-          <strong>offene Kommunikation</strong>, <strong>Transparenz</strong>{' '}
-          und eine konstruktive Fehlerkultur.
+          Ich entwickle mit Leidenschaft Lösungen, die echten Mehrwert für
+          Kund:innen schaffen. Mir sind <strong>offene Kommunikation</strong>,
+          <strong> Transparenz</strong> und eine konstruktive Fehlerkultur
+          wichtig.
         </p>
         <p className="mb-3">
-          Kundenzufriedenheit hat für mich höchste Priorität. Ich liebe es zu
-          programmieren, neue Herausforderungen anzugehen und in agilen,
-          kollaborativen Teams zu arbeiten.
+          Kundenzufriedenheit hat für mich oberste Priorität. Ich nehme gern
+          neue Herausforderungen an und arbeite bevorzugt in agilen,
+          kollaborativen Teams.
         </p>
         <p className="mb-3">
-          Neugierig auf meine <strong>Projekte</strong>, die{' '}
-          <strong>Technologies</strong>, die ich einsetze, oder möchtest du{' '}
-          <strong>Kontakt</strong> aufnehmen? Schau dir die entsprechenden
-          Bereiche oben an!
+          Neugierig auf meine <strong>Projekte</strong>, die
+          <strong> Technologien</strong>, die ich einsetze, oder möchtest du
+          <strong> Kontakt</strong> aufnehmen? Schau dir die entsprechenden
+          Bereiche oben an.
         </p>
       </div>
     </section>
