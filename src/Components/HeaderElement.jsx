@@ -1,8 +1,15 @@
+import { useNavigate, useLocation } from 'react-router-dom';
+
 const HeaderElement = ({ title, targetId }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleClick = () => {
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: targetId } });
+    } else {
+      const el = document.getElementById(targetId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

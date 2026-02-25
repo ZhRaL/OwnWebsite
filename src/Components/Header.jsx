@@ -1,6 +1,7 @@
 import HeaderElement from './HeaderElement';
 import Logo from '../assets/Logo_Final.png';
 import Icon from '../assets/Icon.png';
+import Icon2 from '../assets/Logo_Final2.png';
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
     >
       <div className="header__left flex items-center">
         <a href="/" className="header__logo-link">
-          <img src={Icon} alt="Logo" className="header__logo" />
+          <img src={Icon2} alt="Logo" className="header__logo" />
         </a>
       </div>
 
