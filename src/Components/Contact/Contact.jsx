@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import SingleLineInput from './SingleLineInput';
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -8,123 +7,125 @@ const Contact = () => {
     company: '',
     phone: '',
     message: '',
+    'bot-field': '',
   });
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
   };
 
-  const isDisabled = !form.name.trim() || !form.email.trim();
+  const isDisabled = !form.name.trim() || !form.email.trim() || !form.message.trim();
 
   return (
-    <section id="contact" className="max-w-3xl mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-8 text-blue-900">Kontakt</h2>
-      <p>
-        Wenn du Interesse hast, mit mir in Kontakt zu treten, um dein Projekt
-        voranzubringen, freue ich mich auf deine Nachricht!
-      </p>
-      <p>E-Mail: info@alpha-coding.dev</p>
-      <p>Oder nutze das folgende Formular:</p>
-      <form name="contact" method="post" className="flex flex-col gap-5 w-full">
-        <input type="hidden" name="form-name" value="contact" />
-
-        <div className="flex flex-row gap-5 w-full">
-          {/* Linke Spalte */}
-          <div className="flex flex-col gap-5 flex-1">
-            <label
-              className="font-bold font-sans text-left text-blue-900"
-              htmlFor="name"
-            >
-              Name:<span className="text-red-500 ml-1">*</span>
-            </label>
-            <input
-              className="rounded-lg bg-blue-100 shadow-lg shadow-blue-500/50 pl-3 py-2 w-full"
-              type="text"
-              id="name"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              required
-            />
-
-            <label
-              className="font-bold font-sans text-left text-blue-900"
-              htmlFor="email"
-            >
-              E-Mail:<span className="text-red-500 ml-1">*</span>
-            </label>
-            <input
-              className="rounded-lg bg-blue-100 shadow-lg shadow-blue-500/50 pl-3 py-2 w-full"
-              type="email"
-              id="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          {/* Rechte Spalte */}
-          <div className="flex flex-col gap-5 flex-1">
-            <label
-              className="font-bold font-sans text-left text-blue-900"
-              htmlFor="company"
-            >
-              Firma:
-            </label>
-            <input
-              className="rounded-lg bg-blue-100 shadow-lg shadow-blue-500/50 pl-3 py-2 w-full"
-              type="text"
-              id="company"
-              name="company"
-              value={form.company}
-              onChange={handleChange}
-            />
-
-            <label
-              className="font-bold font-sans text-left text-blue-900"
-              htmlFor="phone"
-            >
-              Telefonnummer:
-            </label>
-            <input
-              className="rounded-lg bg-blue-100 shadow-lg shadow-blue-500/50 pl-3 py-2 w-full"
-              type="text"
-              id="phone"
-              name="phone"
-              value={form.phone}
-              onChange={handleChange}
-            />
-          </div>
+    <section id="contact" className="content-section section-shell">
+      <div className="section-header">
+        <div>
+          <span className="section-kicker">Kontakt</span>
+          <h2>Direkter Austausch für Projekte mit technischem Anspruch.</h2>
         </div>
+        <p>
+          Wenn du eine verlässliche technische Umsetzung suchst und Wert auf saubere Entwicklung,
+          klare Kommunikation und professionelle Zusammenarbeit legst, freue ich mich auf deine
+          Nachricht.
+        </p>
+      </div>
 
-        <label
-          className="font-bold font-sans text-left text-blue-900"
-          htmlFor="message"
-        >
-          Nachricht:
-        </label>
-        <textarea
-          className="rounded-lg bg-blue-100 shadow-lg shadow-blue-500/50 pl-3 py-2 w-full"
-          id="message"
-          name="message"
-          rows={5}
-          value={form.message}
-          onChange={handleChange}
-        />
+      <div className="contact-grid">
+        <article className="contact-card">
+          <span className="card-label">Direkter Kontakt</span>
+          <h3>Einfach, seriös und ohne Umwege.</h3>
+          <p>
+            Ob neue Anwendung, Weiterentwicklung bestehender Systeme oder technische Unterstützung in
+            einem laufenden Projekt: Ich antworte gerne auf konkrete Anfragen.
+          </p>
+          <div className="contact-points">
+            <div className="contact-point">
+              <span>E-Mail</span>
+              <a href="mailto:info@alpha-coding.dev">info@alpha-coding.dev</a>
+            </div>
+            <div className="contact-point">
+              <span>Telefon</span>
+              <a href="tel:+4915142492807">+49 151 42492807</a>
+            </div>
+            <div className="contact-point">
+              <span>Standort</span>
+              <p>53881 Euskirchen, Deutschland</p>
+            </div>
+          </div>
+        </article>
 
-        <button
-          type="submit"
-          className={`mt-4 px-6 py-2 font-bold rounded-lg shadow-lg transition ${
-            isDisabled
-              ? 'bg-gray-400 text-gray-200'
-              : 'bg-blue-500 text-white hover:bg-blue-700 cursor-pointer'
-          }`}
-          disabled={isDisabled}
-        >
-          Nachricht senden
-        </button>
-      </form>
+        <article className="form-card">
+          <span className="card-label">Nachricht senden</span>
+          <h3>Projektanfrage oder fachlicher Austausch</h3>
+          <form className="contact-form" method="post" name="contact">
+            <input type="hidden" name="form-name" value="contact" />
+            <div hidden>
+              <input name="bot-field" onChange={handleChange} type="text" value={form['bot-field']} />
+            </div>
+
+            <div className="form-grid">
+              <div className="field">
+                <label htmlFor="name">Name *</label>
+                <input
+                  id="name"
+                  name="name"
+                  onChange={handleChange}
+                  required
+                  type="text"
+                  value={form.name}
+                />
+              </div>
+              <div className="field">
+                <label htmlFor="email">E-Mail *</label>
+                <input
+                  id="email"
+                  name="email"
+                  onChange={handleChange}
+                  required
+                  type="email"
+                  value={form.email}
+                />
+              </div>
+              <div className="field">
+                <label htmlFor="company">Firma</label>
+                <input
+                  id="company"
+                  name="company"
+                  onChange={handleChange}
+                  type="text"
+                  value={form.company}
+                />
+              </div>
+              <div className="field">
+                <label htmlFor="phone">Telefon</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  onChange={handleChange}
+                  type="text"
+                  value={form.phone}
+                />
+              </div>
+            </div>
+
+            <div className="field">
+              <label htmlFor="message">Nachricht *</label>
+              <textarea
+                id="message"
+                name="message"
+                onChange={handleChange}
+                required
+                rows="6"
+                value={form.message}
+              />
+            </div>
+
+            <button className="button button-primary" disabled={isDisabled} type="submit">
+              Nachricht senden
+            </button>
+          </form>
+        </article>
+      </div>
     </section>
   );
 };

@@ -1,47 +1,51 @@
-import React from 'react';
-
 const Impressum = () => {
   return (
-    <section id="impressum" className="max-w-5xl mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-4 text-blue-900">Impressum</h2>
+    <section id="impressum" className="content-section section-shell">
+      <div className="section-header">
+        <div>
+          <span className="section-kicker">Impressum</span>
+          <h2>Rechtliche Angaben</h2>
+        </div>
+        <p>Angaben gemäß § 5 TMG und weitere gesetzlich erforderliche Informationen.</p>
+      </div>
 
-      <p className="mb-2">Angaben gemäß § 5 TMG:</p>
-      <p className="mb-1">Name: Sebastian Albert Softwareentwicklung</p>
-      <p className="mb-1">
-        Anschrift: Ohmstr. 9, 53881 Euskirchen, Deutschland
-      </p>
-      <p className="mb-4">
-        Kontakt: E-Mail: Sebastian.Albert@alpha-coding.dev, Telefon: +49 151
-        42492807
-      </p>
+      <div className="service-grid">
+        <article className="service-card">
+          <h3>Anbieter</h3>
+          <p>Sebastian Albert Softwareentwicklung</p>
+          <p>Ohmstr. 9, 53881 Euskirchen, Deutschland</p>
+          <p>E-Mail: Sebastian.Albert@alpha-coding.dev</p>
+          <p>Telefon: +49 151 42492807</p>
+        </article>
 
-      <h3 className="font-semibold mt-4 mb-2">Tätigkeitsbezeichnung</h3>
-      <p className="mb-4">Freiberuflicher Softwareentwickler</p>
+        <article className="service-card">
+          <h3>Tätigkeit</h3>
+          <p>Freiberuflicher Softwareentwickler</p>
+          <p>Umsatzsteuer-Identifikationsnummer: DE459876602</p>
+          <p>Verantwortlich für den Inhalt: Sebastian Albert, Ohmstr. 9, 53881 Euskirchen</p>
+        </article>
 
-      <h3 className="font-semibold mt-4 mb-2">Berufsrechtliche Angaben</h3>
-      <p className="mb-4">
-        Für die ausgeübte Tätigkeit gelten keine speziellen berufsrechtlichen
-        Vorschriften (nicht reglementierter Beruf).
-      </p>
+        <article className="service-card">
+          <h3>Berufsrechtliche Angaben</h3>
+          <p>
+            Für die ausgeübte Tätigkeit gelten keine speziellen berufsrechtlichen Vorschriften, da
+            es sich um einen nicht reglementierten Beruf handelt.
+          </p>
+        </article>
 
-      <p className="mb-2">Umsatzsteuer-Identifikationsnummer: DE459876602</p>
-
-      <h3 className="font-semibold mt-4 mb-2">
-        Verantwortlich für den Inhalt (§ 55 Abs. 2 RStV)
-      </h3>
-      <p className="mb-4">Sebastian Albert, Ohmstr. 9, 53881 Euskirchen</p>
-
-      <h3 className="font-semibold mt-4 mb-2">Haftungsausschluss</h3>
-      <p className="mb-2">
-        Die Inhalte dieser Webseite wurden mit größtmöglicher Sorgfalt erstellt.
-        Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich
-        jedoch keine Gewähr übernehmen.
-      </p>
-
-      <p className="mb-2">
-        Externe Links werden ggf. nicht fortlaufend überprüft. Für den Inhalt
-        verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.
-      </p>
+        <article className="service-card">
+          <h3>Haftungsausschluss</h3>
+          <p>
+            Die Inhalte dieser Webseite wurden mit größtmöglicher Sorgfalt erstellt. Für
+            Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr
+            übernommen werden.
+          </p>
+          <p>
+            Externe Links werden gegebenenfalls nicht fortlaufend geprüft. Für die Inhalte
+            verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.
+          </p>
+        </article>
+      </div>
     </section>
   );
 };

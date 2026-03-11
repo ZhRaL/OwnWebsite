@@ -1,87 +1,156 @@
-import React, { useEffect } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import Header from './Components/Header';
-import Aboutme from './Components/Aboutme';
-import Skills from './Components/Skills';
-import Projects from './Components/Projects/Projects';
-import Technologies from './Components/Technologies/Technologies';
-import Contact from './Components/Contact/Contact';
-import HeaderBackground from './assets/Header_Element.png';
-import Impressum from './Components/Impressum';
-import Footer from './Components/Footer';
+import { useEffect } from 'react';
 import {
   BrowserRouter as Router,
-  Routes,
-  Route,
   Link,
+  Route,
+  Routes,
   useLocation,
 } from 'react-router-dom';
+import './App.css';
+import Aboutme from './Components/Aboutme';
+import Contact from './Components/Contact/Contact';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
+import Impressum from './Components/Impressum';
+import Projects from './Components/Projects/Projects';
+import Skills from './Components/Skills';
+import Technologies from './Components/Technologies/Technologies';
 
-function HomePage() {
+function ScrollHandler() {
   const location = useLocation();
 
   useEffect(() => {
     if (location?.state?.scrollTo) {
       const id = location.state.scrollTo;
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-        try {
-          window.history.replaceState({}, document.title, window.location.href);
-        } catch (e) {}
-      }, 50);
-    } else if (location?.hash) {
+      window.setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        window.history.replaceState(
+          {},
+          document.title,
+          window.location.pathname,
+        );
+      }, 80);
+      return;
+    }
+
+    if (location.hash) {
       const id = location.hash.replace('#', '');
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 50);
+      window.setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 80);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
   }, [location]);
+
+  return null;
+}
+
+function HomePage() {
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-start bg-cover bg-center bg-fixed"
-      id="global-bg"
-    >
+    <div className="site-shell">
       <Header />
-      <img
-        src={HeaderBackground}
-        alt=""
-        className="object-contain fixed flex"
-        style={{ height: '320px', opacity: 1 }}
-      />
-      <main
-        className="w-full max-w-4xl flex flex-col items-center px-4 z-10 rounded-xl shadow-lg my-8"
-        style={{ background: 'rgba(255,255,255,0.75)' }}
-      >
+      <main className="page-content">
+        <section id="home" className="hero-section section-shell">
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <span className="section-kicker">
+                Fullstack-Entwicklung mit Fokus auf .NET und React
+              </span>
+              <h1>
+                Technische Umsetzung mit Substanz, Klarheit und hohem
+                Qualitätsanspruch.
+              </h1>
+              <p className="hero-lead">
+                Ich entwickle moderne Webanwendungen und belastbare
+                Softwarelösungen mit starkem Backend-Fokus, sauberer Struktur
+                und einem klaren Blick für Business-Anforderungen, Wartbarkeit
+                und nachhaltige Weiterentwicklung.
+              </p>
+              <div className="hero-points">
+                <span>
+                  Strukturierte Umsetzung statt kurzfristiger Workarounds
+                </span>
+                <span>
+                  Offene Kommunikation, Transparenz und verlässliche
+                  Zusammenarbeit
+                </span>
+                <span>Technische Tiefe in Entwicklung und IT-Sicherheit</span>
+                <span>
+                  Saubere, wartbare Lösungen mit Blick auf Performance und
+                  Skalierbarkeit
+                </span>
+              </div>
+              <div className="hero-actions">
+                <a className="button button-primary" href="#contact">
+                  Kontakt aufnehmen
+                </a>
+                <a className="button button-secondary" href="#projects">
+                  Schwerpunkte ansehen
+                </a>
+              </div>
+            </div>
+            <aside className="hero-panel">
+              <div className="hero-panel-card">
+                <span className="eyebrow">Positionierung</span>
+
+                <p>
+                  Fullstack-Entwickler mit Schwerpunkt Backend. Erfahrung in
+                  Softwareentwicklung, Cyber-Sicherheit und technischer
+                  Produktumsetzung.
+                </p>
+              </div>
+              <div className="hero-metrics">
+                <div className="metric-card">
+                  <strong>8 Jahre</strong>
+                  <span>.NET und C# in der Praxis</span>
+                </div>
+                <div className="metric-card">
+                  <strong>5 Jahre</strong>
+                  <span>Unity-Erfahrung bis 2025</span>
+                </div>
+                <div className="metric-card">
+                  <strong>M.Sc.</strong>
+                  <span>Cyber-Sicherheit, Abschluss 2023</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
         <Aboutme />
         <Skills />
-        <div className="my-8 flex justify-center w-full">
-          <div className="w-2/3 h-0.5 bg-gray-300 rounded"></div>
-        </div>
-
         <Projects />
-        <div className="my-8 flex justify-center w-full">
-          <div className="w-2/3 h-0.5 bg-gray-300 rounded"></div>
-        </div>
-
         <Technologies />
-        <div className="my-8 flex justify-center w-full">
-          <div className="w-2/3 h-0.5 bg-gray-300 rounded"></div>
-        </div>
-
         <Contact />
-        <div className="w-full text-center mt-4 mb-6">
-          <span>© {new Date().getFullYear()} Sebastian Albert</span>
-          <span className="mx-2">•</span>
-          <Link to="/impressum" className="text-blue-700 hover:underline">
-            Impressum
-          </Link>
-        </div>
-        <div className="mb-12" />
       </main>
+      <section className="legal-strip section-shell">
+        <div className="legal-strip__inner">
+          <span>© {new Date().getFullYear()} Sebastian Albert</span>
+          <Link to="/impressum">Impressum</Link>
+        </div>
+      </section>
+      <Footer />
+    </div>
+  );
+}
+
+function LegalPage() {
+  return (
+    <div className="site-shell">
+      <Header />
+      <main className="page-content">
+        <section className="section-shell legal-page">
+          <Impressum />
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 }
@@ -89,27 +158,11 @@ function HomePage() {
 function App() {
   return (
     <Router>
+      <ScrollHandler />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route
-          path="/impressum"
-          element={
-            <div
-              className="min-h-screen flex flex-col items-center justify-start bg-cover bg-center bg-fixed"
-              id="global-bg"
-            >
-              <Header />
-              <main
-                className="w-full max-w-4xl flex flex-col items-start px-4 z-10 rounded-xl shadow-lg my-8"
-                style={{ background: 'rgba(255,255,255,0.75)' }}
-              >
-                <Impressum />
-              </main>
-            </div>
-          }
-        />
+        <Route path="/impressum" element={<LegalPage />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }

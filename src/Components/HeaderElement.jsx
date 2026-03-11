@@ -1,25 +1,33 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const HeaderElement = ({ title, targetId }) => {
+const HeaderElement = ({ title, targetId, primary = false }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleClick = () => {
     if (location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: targetId } });
-    } else {
-      const el = document.getElementById(targetId);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      navigate(`/#${targetId}`);
+      return;
+    }
+
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   return (
-    <span
-      className="HeaderElement px-4 py-2 rounded-lg font-semibold text-blue-900 hover:bg-blue-100 transition cursor-pointer"
+    <button
+      className={
+        primary
+          ? 'ml-2 inline-flex min-h-[44px] cursor-pointer items-center rounded-2xl border border-slate-900 bg-slate-950 px-5 text-sm font-bold text-slate-50 transition hover:bg-slate-800'
+          : 'inline-flex min-h-[44px] cursor-pointer items-center rounded-2xl px-4 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-950'
+      }
       onClick={handleClick}
+      type="button"
     >
       {title}
-    </span>
+    </button>
   );
 };
 

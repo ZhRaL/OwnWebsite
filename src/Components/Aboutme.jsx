@@ -1,43 +1,67 @@
-const Home = () => {
+const principles = [
+  {
+    title: 'Technische Klarheit',
+    text: 'Ich arbeite strukturiert, denke Systeme sauber durch und bevorzuge Lösungen, die langfristig tragfähig bleiben.',
+  },
+  {
+    title: 'Verlässliche Zusammenarbeit',
+    text: 'Offene Kommunikation, Transparenz und eine konstruktive Fehlerkultur sind für mich kein Zusatz, sondern Standard.',
+  },
+  {
+    title: 'Business-Verständnis',
+    text: 'Technik soll nicht nur funktionieren, sondern konkrete Anforderungen sauber, effizient und nachvollziehbar abbilden.',
+  },
+  {
+    title: 'Qualität mit Anspruch',
+    text: 'Wartbarkeit, Performance, saubere Architektur und nutzerorientierte Umsetzung haben für mich hohen Stellenwert.',
+  },
+];
+
+const Aboutme = () => {
   return (
-    <section id="aboutme" className="max-w-5xl mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-8 text-blue-900">
-        Webseite im Aufbau{' '}
-      </h2>
-      <p className="mb-3 text-lg">
-        {' '}
-        Die Seite ist noch im Aufbau, demnach ist Inhalt noch unvollständig und
-        kann Fehler enthalten!!
-      </p>
-      <h2 className="text-3xl font-bold mb-8 text-blue-900">Über mich</h2>
-      <div className="text-lg text-left">
-        <p className="mb-3 text-lg">
-          Hallo, ich bin Basti 👋, 32 Jahre alt und arbeite als
-          <strong> Fullstack-Entwickler</strong> aus Deutschland. Meine
-          Schwerpunkte liegen auf <strong>.NET</strong> und{' '}
-          <strong>React</strong>. Ich bin überwiegend im Backend tätig und fühle
-          mich dort besonders zuhause.
+    <section id="about" className="content-section section-shell">
+      <div className="section-header">
+        <div>
+          <span className="section-kicker">Über mich</span>
+          <h2>Entwicklung mit Fokus, Verantwortung und technischer Tiefe.</h2>
+        </div>
+        <p>
+          Ich bin Basti, 32 Jahre alt, Fullstack-Entwickler aus Deutschland und arbeite
+          schwerpunktmäßig mit .NET und React. Mein fachliches Zuhause liegt klar im Backend,
+          gleichzeitig denke ich Anwendungen immer als Ganzes.
         </p>
-        <p className="mb-3">
-          Ich entwickle mit Leidenschaft Lösungen, die echten Mehrwert für
-          Kund:innen schaffen. Mir sind <strong>offene Kommunikation</strong>,
-          <strong> Transparenz</strong> und eine konstruktive Fehlerkultur
-          wichtig.
-        </p>
-        <p className="mb-3">
-          Kundenzufriedenheit hat für mich oberste Priorität. Ich nehme gern
-          neue Herausforderungen an und arbeite bevorzugt in agilen,
-          kollaborativen Teams.
-        </p>
-        <p className="mb-3">
-          Neugierig auf meine <strong>Projekte</strong>, die
-          <strong> Technologien</strong>, die ich einsetze, oder möchtest du
-          <strong> Kontakt</strong> aufnehmen? Schau dir die entsprechenden
-          Bereiche oben an.
-        </p>
+      </div>
+
+      <div className="two-column-layout">
+        <div className="body-copy">
+          <p>
+            Ich entwickle Softwarelösungen mit dem Anspruch, echten Mehrwert zu schaffen. Mir ist
+            wichtig, dass Anwendungen nicht nur kurzfristig liefern, sondern auch strukturell sauber,
+            nachvollziehbar und belastbar bleiben.
+          </p>
+          <p>
+            Neue Herausforderungen nehme ich gerne an. Ich arbeite bevorzugt in agilen,
+            kollaborativen Umfeldern und schätze Zusammenarbeit, in der fachliche Klarheit, direkte
+            Kommunikation und ein hoher Qualitätsanspruch selbstverständlich sind.
+          </p>
+          <p>
+            Kundenzufriedenheit hat für mich oberste Priorität. Das zeigt sich nicht nur im
+            Ergebnis, sondern vor allem in einer verlässlichen, professionellen und
+            lösungsorientierten Arbeitsweise.
+          </p>
+        </div>
+
+        <div className="highlight-list">
+          {principles.map((principle) => (
+            <article key={principle.title} className="detail-card">
+              <strong>{principle.title}</strong>
+              <p>{principle.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default Home;
+export default Aboutme;
