@@ -1,9 +1,16 @@
 .site-shell {
   min-height: 100vh;
+  width: 100%;
+  overflow-x: clip;
+}
+
+.site-header {
+  transition: transform 220ms ease, opacity 220ms ease;
 }
 
 .page-content {
   width: min(1180px, calc(100% - 32px));
+  max-width: 100%;
   margin: 0 auto;
   padding: 32px 0 64px;
 }
@@ -40,6 +47,7 @@ section[id] {
 .hero-section {
   padding: 44px;
   margin-bottom: 24px;
+  overflow: hidden;
 }
 
 .hero-grid {
@@ -47,11 +55,13 @@ section[id] {
   grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.9fr);
   gap: 28px;
   align-items: stretch;
+  min-width: 0;
 }
 
 .hero-copy h1 {
   margin: 0;
   max-width: 11ch;
+  overflow-wrap: anywhere;
   font-size: clamp(3.1rem, 6vw, 5.3rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
@@ -64,6 +74,7 @@ section[id] {
   font-size: 1.08rem;
   line-height: 1.8;
   color: #475569;
+  overflow-wrap: anywhere;
 }
 
 .hero-points {
@@ -144,6 +155,7 @@ section[id] {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  min-width: 0;
 }
 
 .hero-panel-card,
@@ -232,6 +244,7 @@ section[id] {
 .contact-grid {
   display: grid;
   gap: 18px;
+  min-width: 0;
 }
 
 .highlight-list {
@@ -244,6 +257,7 @@ section[id] {
 .category-card,
 .contact-card,
 .form-card {
+  min-width: 0;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 24px;
   background: #fff;
@@ -326,6 +340,7 @@ section[id] {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 16px;
+  min-width: 0;
 }
 
 .badge {
@@ -392,6 +407,7 @@ section[id] {
 .contact-form {
   display: grid;
   gap: 16px;
+  min-width: 0;
 }
 
 .form-grid {
@@ -413,6 +429,7 @@ section[id] {
 .field input,
 .field textarea {
   width: 100%;
+  max-width: 100%;
   border: 1px solid rgba(15, 23, 42, 0.12);
   border-radius: 16px;
   background: #fff;
@@ -485,23 +502,59 @@ section[id] {
 }
 
 @media (max-width: 720px) {
+  .site-header--hidden {
+    transform: translateY(calc(-100% - 8px));
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .page-content {
     width: 100%;
-    padding-top: 20px;
+    padding-top: 0;
   }
 
   .hero-section,
   .content-section {
     padding: 24px;
-    border-radius: 24px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.4rem, 15vw, 3.5rem);
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1;
   }
 
   .hero-lead {
     font-size: 1rem;
+  }
+
+  .hero-section {
+    margin-bottom: 16px;
+    padding-top: 20px;
+  }
+
+  .hero-grid,
+  .hero-points,
+  .hero-actions,
+  .hero-panel,
+  .hero-metrics {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .section-kicker,
+  .eyebrow {
+    max-width: 100%;
+    white-space: normal;
   }
 
   .site-header__inner {
@@ -518,11 +571,45 @@ section[id] {
     font-size: 1rem;
   }
 
+  .site-header nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .site-header nav button {
+    min-height: 40px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 0.85rem;
+  }
+
+  .site-header nav button:last-child {
+    margin-left: 0;
+  }
+
+  .hero-points span,
+  .detail-card,
+  .service-card,
+  .focus-card,
+  .category-card,
+  .contact-card,
+  .form-card,
+  .hero-panel-card,
+  .metric-card,
+  .muted-panel {
+    width: 100%;
+    min-width: 0;
+  }
+
   .section-shell,
   .legal-strip {
+    width: 100%;
     border-left: none;
     border-right: none;
     border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .legal-strip {
