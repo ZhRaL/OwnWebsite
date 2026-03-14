@@ -21,22 +21,26 @@ const Contact = () => {
       <div className="section-header">
         <div>
           <span className="section-kicker">Kontakt</span>
-          <h2>Direkter Austausch für Projekte mit technischem Anspruch.</h2>
+          <h2>Projektidee oder technisches Problem?</h2>
         </div>
         <p>
-          Wenn du eine verlässliche technische Umsetzung suchst und Wert auf saubere Entwicklung,
-          klare Kommunikation und professionelle Zusammenarbeit legst, freue ich mich auf deine
+          Wenn du Unterstützung bei einer Webplattform, einem Backend-System
+          oder einem technischen MVP suchst, freue ich mich über deine
           Nachricht.
+        </p>
+        <p>
+          Ich antworte gerne auf konkrete Projektanfragen und technische
+          Fragestellungen.
         </p>
       </div>
 
       <div className="contact-grid">
         <article className="contact-card">
           <span className="card-label">Direkter Kontakt</span>
-          <h3>Einfach, seriös und ohne Umwege.</h3>
+          <h3>Direkt und ohne Umwege.</h3>
           <p>
-            Ob neue Anwendung, Weiterentwicklung bestehender Systeme oder technische Unterstützung in
-            einem laufenden Projekt: Ich antworte gerne auf konkrete Anfragen.
+            Ob neue Plattform, API, MVP oder die Weiterentwicklung bestehender
+            Software: Ich antworte gerne auf konkrete technische Anfragen.
           </p>
           <div className="contact-points">
             <div className="contact-point">

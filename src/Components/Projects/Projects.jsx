@@ -2,22 +2,22 @@ const focusAreas = [
   {
     label: 'Fokusfeld',
     title: 'Backend-zentrierte Produktentwicklung',
-    text: 'Mein Schwerpunkt liegt dort, wo Anwendungen tragfähig werden: in sauberer Business-Logik, belastbaren Schnittstellen, klarer Datenverarbeitung und stabilen technischen Strukturen.',
+    text: 'Ich arbeite vor allem an den Teilen eines Produkts, die für Stabilität, klare Prozesse und saubere technische Grundlagen verantwortlich sind.',
   },
   {
     label: 'Arbeitsweise',
-    title: 'Agil, kollaborativ und direkt',
-    text: 'Ich arbeite gerne in Teams, in denen Anforderungen klar diskutiert, technische Entscheidungen nachvollziehbar getroffen und Probleme offen gelöst werden.',
+    title: 'Zusammenarbeit in kleinen Teams',
+    text: 'Viele Projekte entstehen in kleinen Teams oder direkt mit Gründern. Dort sind klare Abstimmung und pragmatische technische Entscheidungen besonders wichtig.',
   },
   {
     label: 'Qualitätsanspruch',
-    title: 'Saubere Lösungen statt kurzfristiger Workarounds',
-    text: 'Mein Anspruch ist eine Umsetzung, die nicht nur heute funktioniert, sondern auch später nachvollziehbar, wartbar und professionell weiterentwickelbar bleibt.',
+    title: 'Saubere Architektur statt kurzfristiger Workarounds',
+    text: 'Ich bevorzuge Lösungen, die die Systemstruktur verbessern, statt spätere Probleme durch kurzfristige Abkürzungen zu verstärken.',
   },
   {
     label: 'Status',
-    title: 'Referenzen im Ausbau',
-    text: 'Die öffentliche Darstellung einzelner Projekte befindet sich aktuell noch im Aufbau. Inhaltlich liegt mein Fokus klar auf technischer Qualität, sauberer Umsetzung und verlässlicher Zusammenarbeit.',
+    title: 'Kontinuierliche Weiterentwicklung von Software',
+    text: 'Ein grosser Teil meiner Arbeit besteht nicht nur im Neubau, sondern in der schrittweisen Weiterentwicklung bestehender Anwendungen und Systeme.',
   },
 ];
 
@@ -27,12 +27,13 @@ const Projects = () => {
       <div className="section-header">
         <div>
           <span className="section-kicker">Projekte, Erfahrung & Arbeitsweise</span>
-          <h2>Technische Arbeit, die auf Qualität und belastbare Ergebnisse ausgerichtet ist.</h2>
+          <h2>Technische Umsetzung mit Fokus auf stabile Systeme.</h2>
         </div>
         <p>
-          Die bestehende Projektübersicht wird aktuell weiter ausgebaut. Bereits heute ist jedoch
-          klar, wofür ich in der Umsetzung stehe: solide Entwicklung, direkte Kommunikation und ein
-          Anspruch, der über reine Funktionserfüllung hinausgeht.
+          Ein grosser Teil meiner Arbeit besteht darin, Systeme zu entwickeln
+          oder bestehende Software weiterzuentwickeln. Der Fokus liegt dabei auf
+          klarer Architektur, stabiler Backend-Logik und Lösungen, die
+          langfristig wartbar bleiben.
         </p>
       </div>
 
@@ -47,12 +48,11 @@ const Projects = () => {
       </div>
 
       <div className="muted-panel mt-6">
-        <h3>Projektinformationen werden gezielt ausgebaut</h3>
+        <h3>Praktische Entwicklung statt Showcases</h3>
         <p>
-          Statt unpräziser Showcase-Karten oder austauschbarer Platzhalter wird diese Sektion
-          schrittweise mit belastbaren Inhalten ergänzt. Bis dahin zeigt die Seite bewusst den
-          professionellen Rahmen, die fachlichen Schwerpunkte und die Art, wie ich technische
-          Zusammenarbeit angehe.
+          Diese Seite beschreibt bewusst den fachlichen Schwerpunkt und die Art
+          der Zusammenarbeit. Im Vordergrund stehen reale Entwicklungsarbeit,
+          stabile Systeme und nachvollziehbare technische Entscheidungen.
         </p>
       </div>
     </section>

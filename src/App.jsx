@@ -53,6 +53,52 @@ function ScrollHandler() {
 }
 
 function HomePage() {
+  const projectSituations = [
+    {
+      label: 'MVP',
+      title: 'Eine Produktidee soll als MVP umgesetzt werden',
+    },
+    {
+      label: 'Backend',
+      title: 'Eine Plattform braucht ein stabiles Backend',
+    },
+    {
+      label: 'Wartbarkeit',
+      title: 'Eine bestehende Anwendung ist schwer wartbar geworden',
+    },
+    {
+      label: 'API',
+      title: 'Eine API muss neu aufgebaut oder stabilisiert werden',
+    },
+    {
+      label: 'Architektur',
+      title: 'Ein Team braucht Unterstützung bei Backend-Architektur',
+    },
+  ];
+
+  const collaborationSteps = [
+    {
+      label: 'Schritt 01',
+      title: 'Erstgespräch',
+      text: 'Verständnis der Idee oder des bestehenden Systems.',
+    },
+    {
+      label: 'Schritt 02',
+      title: 'Technische Analyse',
+      text: 'Bewertung möglicher Architektur und Lösungswege.',
+    },
+    {
+      label: 'Schritt 03',
+      title: 'Struktur und Planung',
+      text: 'Definition der Systemstruktur und Umsetzungsschritte.',
+    },
+    {
+      label: 'Schritt 04',
+      title: 'Iterative Entwicklung',
+      text: 'Umsetzung in klaren Entwicklungsschritten mit regelmäßiger Abstimmung.',
+    },
+  ];
+
   return (
     <div className="site-shell">
       <Header />
@@ -60,32 +106,22 @@ function HomePage() {
         <section id="home" className="hero-section section-shell">
           <div className="hero-grid">
             <div className="hero-copy">
-              <span className="section-kicker">
-                Fullstack-Entwicklung mit Fokus auf .NET und React
-              </span>
-              <h1>
-                Technische Umsetzung mit Substanz, Klarheit und hohem
-                Qualitätsanspruch.
-              </h1>
+              <span className="section-kicker">Backend-orientierte Fullstack-Entwicklung</span>
+              <h1>Webplattformen, APIs und MVPs – technisch sauber entwickelt.</h1>
               <p className="hero-lead">
-                Ich entwickle moderne Webanwendungen und belastbare
-                Softwarelösungen mit starkem Backend-Fokus, sauberer Struktur
-                und einem klaren Blick für Business-Anforderungen, Wartbarkeit
-                und nachhaltige Weiterentwicklung.
+                Ich entwickle Webplattformen, APIs und technische MVPs für
+                Startups, Gründer und Unternehmen mit bestehenden Systemen.
+              </p>
+              <p className="hero-lead">
+                Mein Schwerpunkt liegt im Backend: strukturierte
+                Business-Logik, stabile Schnittstellen und Systeme, die
+                langfristig wartbar bleiben.
               </p>
               <div className="hero-points">
-                <span>
-                  Strukturierte Umsetzung statt kurzfristiger Workarounds
-                </span>
-                <span>
-                  Offene Kommunikation, Transparenz und verlässliche
-                  Zusammenarbeit
-                </span>
-                <span>Technische Tiefe in Entwicklung und IT-Sicherheit</span>
-                <span>
-                  Saubere, wartbare Lösungen mit Blick auf Performance und
-                  Skalierbarkeit
-                </span>
+                <span>Entwicklung von Webplattformen und Single-Page-Applications</span>
+                <span>Backend-Systeme und APIs mit .NET</span>
+                <span>MVPs und Prototypen für neue Produktideen</span>
+                <span>Stabilisierung und Weiterentwicklung bestehender Software</span>
               </div>
               <div className="hero-actions">
                 <a className="button button-primary" href="#contact">
@@ -101,23 +137,23 @@ function HomePage() {
                 <span className="eyebrow">Positionierung</span>
 
                 <p>
-                  Fullstack-Entwickler mit Schwerpunkt Backend. Erfahrung in
-                  Softwareentwicklung, Cyber-Sicherheit und technischer
-                  Produktumsetzung.
+                  Fullstack-Entwickler mit Schwerpunkt Backend für
+                  Webplattformen, APIs, MVPs und die technische
+                  Weiterentwicklung bestehender Systeme.
                 </p>
               </div>
               <div className="hero-metrics">
                 <div className="metric-card">
-                  <strong>8 Jahre</strong>
-                  <span>.NET und C# in der Praxis</span>
+                  <strong>.NET</strong>
+                  <span>Backend-Systeme und APIs mit klarer Struktur</span>
                 </div>
                 <div className="metric-card">
-                  <strong>5 Jahre</strong>
-                  <span>Unity-Erfahrung bis 2025</span>
+                  <strong>MVPs</strong>
+                  <span>Pragmatische Umsetzung neuer Produktideen</span>
                 </div>
                 <div className="metric-card">
                   <strong>M.Sc.</strong>
-                  <span>Cyber-Sicherheit, Abschluss 2023</span>
+                  <span>Cyber-Sicherheit mit Blick auf Architektur und Risiken</span>
                 </div>
               </div>
             </aside>
@@ -125,7 +161,52 @@ function HomePage() {
         </section>
 
         <Aboutme />
+        <section className="content-section section-shell">
+          <div className="section-header">
+            <div>
+              <span className="section-kicker">Typische Projektsituationen</span>
+              <h2>Wann ich typischerweise ins Projekt komme</h2>
+            </div>
+            <p>
+              Viele Projekte starten mit einer Idee oder mit Software, die über
+              die Zeit komplex geworden ist. In diesen Situationen unterstütze
+              ich dabei, technische Lösungen strukturiert umzusetzen.
+            </p>
+          </div>
+
+          <div className="focus-grid">
+            {projectSituations.map((situation) => (
+              <article key={situation.title} className="focus-card">
+                <span className="card-label">{situation.label}</span>
+                <h3>{situation.title}</h3>
+              </article>
+            ))}
+          </div>
+        </section>
         <Skills />
+        <section className="content-section section-shell">
+          <div className="section-header">
+            <div>
+              <span className="section-kicker">Zusammenarbeit</span>
+              <h2>So läuft die Zusammenarbeit typischerweise ab</h2>
+            </div>
+            <p>
+              Viele Projekte beginnen mit einer Idee oder einem bestehenden
+              System, das weiterentwickelt werden soll. Eine klare technische
+              Struktur hilft dabei, Projekte effizient umzusetzen.
+            </p>
+          </div>
+
+          <div className="service-grid">
+            {collaborationSteps.map((step) => (
+              <article key={step.title} className="service-card">
+                <span className="card-label">{step.label}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
         <Projects />
         <Technologies />
         <Contact />
