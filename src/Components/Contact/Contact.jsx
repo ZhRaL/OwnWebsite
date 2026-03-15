@@ -25,12 +25,13 @@ const Contact = () => {
         </div>
         <p>
           Wenn du Unterstützung bei einer Webplattform, einem Backend-System
-          oder einem technischen MVP suchst, freue ich mich über deine
-          Nachricht.
-        </p>
-        <p>
+          oder einem technischen Produkt-Prototypen suchst, freue ich mich
+          über deine Nachricht.
+          <br />
+          <br />
           Ich antworte gerne auf konkrete Projektanfragen und technische
-          Fragestellungen.
+          Fragestellungen und versuche gemeinsam eine tragfähige Lösung zu
+          finden.
         </p>
       </div>
 
@@ -39,8 +40,9 @@ const Contact = () => {
           <span className="card-label">Direkter Kontakt</span>
           <h3>Direkt und ohne Umwege.</h3>
           <p>
-            Ob neue Plattform, API, MVP oder die Weiterentwicklung bestehender
-            Software: Ich antworte gerne auf konkrete technische Anfragen.
+            Ob neue Plattform, API, Produkt-Prototyp oder die Weiterentwicklung
+            bestehender Software: Ich antworte gerne auf konkrete technische
+            Anfragen.
           </p>
           <div className="contact-points">
             <div className="contact-point">

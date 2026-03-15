@@ -5,15 +5,13 @@ import HeaderElement from './HeaderElement';
 
 const navigationItems = [
   { title: 'Start', targetId: 'home' },
-  { title: 'Profil', targetId: 'about' },
-  { title: 'Leistungen', targetId: 'services' },
-  { title: 'Erfahrung', targetId: 'projects' },
-  { title: 'Kompetenzen', targetId: 'technologies' },
+  { title: 'Über mich', targetId: 'about' },
   { title: 'Kontakt', targetId: 'contact' },
 ];
 
 const Header = () => {
   const [isHiddenOnMobile, setIsHiddenOnMobile] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -54,6 +52,40 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (window.location.pathname !== '/') {
+      setActiveSection('');
+      return undefined;
+    }
+
+    const sections = ['home', 'about', 'contact']
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const candidates = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (candidates.length > 0) {
+          setActiveSection(candidates[0].target.id);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <header
       className={`site-header sticky top-0 z-50 border-b border-slate-200/80 bg-white/92 backdrop-blur-xl ${
@@ -68,9 +100,19 @@ const Header = () => {
 
         <nav className="flex flex-wrap items-center justify-end gap-1" aria-label="Hauptnavigation">
           {navigationItems.map((item) => (
-            <HeaderElement key={item.targetId} targetId={item.targetId} title={item.title} />
+            <HeaderElement
+              active={activeSection === item.targetId}
+              key={item.targetId}
+              targetId={item.targetId}
+              title={item.title}
+            />
           ))}
-          <HeaderElement primary targetId="contact" title="Projekt anfragen" />
+          <HeaderElement
+            active={activeSection === 'contact'}
+            primary
+            targetId="contact"
+            title="Projekt anfragen"
+          />
         </nav>
       </div>
     </header>
