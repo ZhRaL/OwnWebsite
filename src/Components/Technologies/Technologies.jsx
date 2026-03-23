@@ -1,23 +1,23 @@
 const technologyGroups = [
   {
     title: 'Technologien',
-    text: 'Schwerpunkte in moderner Webentwicklung mit einem klaren Fokus auf robuste, praxisnahe Umsetzung.',
+    text: 'Technologien, mit denen ich regelmäßig arbeite.',
     badges: ['C#', '.NET', 'React', 'Unity'],
   },
   {
     title: 'Ausbildung',
-    text: 'Fundierte akademische Basis in Softwareentwicklung und IT-Sicherheit.',
-    badges: ['B.Sc. Informatik', 'M.Sc. Cyber-Sicherheit (2023)'],
+    text: 'Akademischer Hintergrund in Entwicklung und Sicherheit.',
+    badges: ['B.Sc. Computer Science', 'M.Sc. Cyber Security (2023)'],
   },
   {
     title: 'Zertifikate',
-    text: 'Gezielte fachliche Vertiefung in Qualität und sichere Webentwicklung.',
-    badges: ['Clean Code (2025)', 'Web-Securities (2025)'],
+    text: 'Weiterbildung mit Fokus auf Codequalität und Sicherheit.',
+    badges: ['Clean Code (2025)', 'Web Security (2025)', 'Softwarearchitektur für Entwickler (2026)'],
   },
   {
     title: 'Arbeitsprofil',
-    text: 'Professionelle Umsetzung mit Fokus auf Nachhaltigkeit, Zusammenarbeit und technische Exzellenz.',
-    badges: ['Backend-Fokus', 'Agile Zusammenarbeit', 'Transparenz', 'Konstruktive Fehlerkultur'],
+    text: 'So arbeite ich in Projekten.',
+    badges: ['Backend focus', 'Agile collaboration', 'Structured development', 'Transparent communication'],
   },
 ];
 
@@ -27,12 +27,11 @@ const Technologies = () => {
       <div className="section-header">
         <div>
           <span className="section-kicker">Kompetenzen & Profil</span>
-          <h2>Fundierte Qualifikation, technischer Fokus und ein klarer Qualitätsstandard.</h2>
+          <h2>Technologien, Ausbildung und Arbeitsweise im Überblick.</h2>
         </div>
         <p>
-          Meine Kenntnisse verbinden praktische Entwicklungserfahrung, akademische Tiefe und ein
-          Arbeitsverständnis, das auf sauberer Umsetzung, Zuverlässigkeit und nachhaltiger
-          Softwareentwicklung basiert.
+          Die Auswahl zeigt die Technologien, fachlichen Grundlagen und die
+          Arbeitsweise, mit denen ich Projekte strukturiert umsetze.
         </p>
       </div>
 

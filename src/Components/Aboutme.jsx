@@ -1,19 +1,19 @@
 const principles = [
   {
-    title: 'Technische Klarheit',
-    text: 'Ich arbeite strukturiert, denke Systeme sauber durch und bevorzuge Lösungen, die langfristig tragfähig bleiben.',
+    title: 'Technologischer Fokus',
+    text: 'C#, .NET, React, Webplattformen und APIs',
   },
   {
-    title: 'Verlässliche Zusammenarbeit',
-    text: 'Offene Kommunikation, Transparenz und eine konstruktive Fehlerkultur sind für mich kein Zusatz, sondern Standard.',
+    title: 'Arbeitsweise',
+    text: 'Strukturiert, direkt und lösungsorientiert',
   },
   {
-    title: 'Business-Verständnis',
-    text: 'Technik soll nicht nur funktionieren, sondern konkrete Anforderungen sauber, effizient und nachvollziehbar abbilden.',
+    title: 'Zusammenarbeit',
+    text: 'Offene Kommunikation und ehrliche technische Einschätzung',
   },
   {
-    title: 'Qualität mit Anspruch',
-    text: 'Wartbarkeit, Performance, saubere Architektur und nutzerorientierte Umsetzung haben für mich hohen Stellenwert.',
+    title: 'Fachlicher Hintergrund',
+    text: 'B.Sc. Informatik, M.Sc. Cyber-Sicherheit',
   },
 ];
 
@@ -23,31 +23,37 @@ const Aboutme = () => {
       <div className="section-header">
         <div>
           <span className="section-kicker">Über mich</span>
-          <h2>Entwicklung mit Fokus, Verantwortung und technischer Tiefe.</h2>
+          <h2>Softwareentwicklung mit Fokus auf strukturierte und tragfähige Lösungen.</h2>
         </div>
         <p>
-          Ich bin Basti, 32 Jahre alt, Fullstack-Entwickler aus Deutschland und arbeite
-          schwerpunktmäßig mit .NET und React. Mein fachliches Zuhause liegt klar im Backend,
-          gleichzeitig denke ich Anwendungen immer als Ganzes.
+          Ich bin Basti, Freelancer für Fullstack-Entwicklung aus Deutschland mit Schwerpunkt Backend-Entwicklung.
         </p>
       </div>
 
       <div className="two-column-layout">
         <div className="body-copy">
           <p>
-            Ich entwickle Softwarelösungen mit dem Anspruch, echten Mehrwert zu schaffen. Mir ist
-            wichtig, dass Anwendungen nicht nur kurzfristig liefern, sondern auch strukturell sauber,
-            nachvollziehbar und belastbar bleiben.
+            Ich unterstütze Startups, Gründer, Agenturen und Unternehmen dabei,
+            Webplattformen, APIs und technische Produkte umzusetzen oder
+            bestehende Systeme weiterzuentwickeln.
           </p>
           <p>
-            Neue Herausforderungen nehme ich gerne an. Ich arbeite bevorzugt in agilen,
-            kollaborativen Umfeldern und schätze Zusammenarbeit, in der fachliche Klarheit, direkte
-            Kommunikation und ein hoher Qualitätsanspruch selbstverständlich sind.
+            Besonders interessant sind für mich Projekte, bei denen technische
+            Struktur eine wichtige Rolle spielt: wenn Systeme über Zeit
+            gewachsen sind, wenn neue Produkte sauber aufgebaut werden sollen
+            oder wenn bestehende Anwendungen stabiler und wartbarer werden
+            müssen.
           </p>
           <p>
-            Kundenzufriedenheit hat für mich oberste Priorität. Das zeigt sich nicht nur im
-            Ergebnis, sondern vor allem in einer verlässlichen, professionellen und
-            lösungsorientierten Arbeitsweise.
+            Meine Stärke liegt darin, komplexe technische Situationen ruhig und
+            strukturiert zu analysieren und daraus Lösungen zu entwickeln, die
+            im Alltag tatsächlich tragfähig sind.
+          </p>
+          <p>
+            Neben praktischer Entwicklungserfahrung habe ich einen
+            Masterabschluss in Cyber-Sicherheit. Dadurch betrachte ich Software
+            nicht nur funktional, sondern auch mit Blick auf Stabilität,
+            Architektur und Sicherheit.
           </p>
         </div>
 
