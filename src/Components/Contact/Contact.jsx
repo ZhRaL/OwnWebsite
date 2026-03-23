@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -6,15 +7,18 @@ const Contact = () => {
     email: '',
     company: '',
     phone: '',
+    privacyAccepted: false,
     message: '',
     'bot-field': '',
   });
 
   const handleChange = (event) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
+    const { name, type, checked, value } = event.target;
+    setForm({ ...form, [name]: type === 'checkbox' ? checked : value });
   };
 
-  const isDisabled = !form.name.trim() || !form.email.trim() || !form.message.trim();
+  const isDisabled =
+    !form.name.trim() || !form.email.trim() || !form.privacyAccepted;
 
   return (
     <section id="contact" className="content-section section-shell">
@@ -25,8 +29,8 @@ const Contact = () => {
         </div>
         <p>
           Wenn du Unterstützung bei einer Webplattform, einem Backend-System
-          oder einem technischen Produkt-Prototypen suchst, freue ich mich
-          über deine Nachricht.
+          oder einem technischen Produkt-Prototypen suchst, freue ich mich über
+          deine Nachricht.
           <br />
           <br />
           Ich antworte gerne auf konkrete Projektanfragen und technische
@@ -66,12 +70,19 @@ const Contact = () => {
           <form className="contact-form" method="post" name="contact">
             <input type="hidden" name="form-name" value="contact" />
             <div hidden>
-              <input name="bot-field" onChange={handleChange} type="text" value={form['bot-field']} />
+              <input
+                name="bot-field"
+                onChange={handleChange}
+                type="text"
+                value={form['bot-field']}
+              />
             </div>
 
             <div className="form-grid">
               <div className="field">
-                <label htmlFor="name">Name *</label>
+                <label htmlFor="name">
+                  Name <span className="required-marker">*</span>
+                </label>
                 <input
                   id="name"
                   name="name"
@@ -82,7 +93,9 @@ const Contact = () => {
                 />
               </div>
               <div className="field">
-                <label htmlFor="email">E-Mail *</label>
+                <label htmlFor="email">
+                  E-Mail <span className="required-marker">*</span>
+                </label>
                 <input
                   id="email"
                   name="email"
@@ -114,8 +127,26 @@ const Contact = () => {
               </div>
             </div>
 
+            <div className="field field-checkbox">
+              <label htmlFor="privacyAccepted">
+                <input
+                  checked={form.privacyAccepted}
+                  id="privacyAccepted"
+                  name="privacyAccepted"
+                  onChange={handleChange}
+                  required
+                  type="checkbox"
+                />
+                <span>
+                  Ich habe die{' '}
+                  <Link to="/datenschutz">Datenschutzerklärung</Link> gelesen
+                  und verstanden <span className="required-marker">*</span>
+                </span>
+              </label>
+            </div>
+
             <div className="field">
-              <label htmlFor="message">Nachricht *</label>
+              <label htmlFor="message">Nachricht</label>
               <textarea
                 id="message"
                 name="message"
@@ -126,7 +157,11 @@ const Contact = () => {
               />
             </div>
 
-            <button className="button button-primary" disabled={isDisabled} type="submit">
+            <button
+              className="button button-primary"
+              disabled={isDisabled}
+              type="submit"
+            >
               Nachricht senden
             </button>
           </form>

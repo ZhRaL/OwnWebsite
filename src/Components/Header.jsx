@@ -58,7 +58,6 @@ const Header = () => {
     return undefined;
   }, []);
 
-
   return (
     <header
       className={`site-header sticky top-0 z-50 border-b border-slate-200 bg-white ${
