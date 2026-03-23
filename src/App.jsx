@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import {
   BrowserRouter as Router,
-  Link,
   Route,
   Routes,
   useLocation,
@@ -9,12 +8,12 @@ import {
 import './App.css';
 import Aboutme from './Components/Aboutme';
 import Contact from './Components/Contact/Contact';
+import Datenschutz from './Components/Datenschutz';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Impressum from './Components/Impressum';
-import Projects from './Components/Projects/Projects';
-import Skills from './Components/Skills';
-import Technologies from './Components/Technologies/Technologies';
+import LegalStrip from './Components/LegalStrip';
+import Scenarios from './Components/Scenarios';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -53,103 +52,69 @@ function ScrollHandler() {
 }
 
 function HomePage() {
+  const services = [
+    {
+      title: 'Webplattformen',
+      text: 'Entwicklung von Webplattformen und Single-Page-Applications mit React und .NET. Saubere Backend-Strukturen und eine technische Grundlage, die langfristige Erweiterungen ermöglicht.',
+    },
+    {
+      title: 'APIs und Backend-Systeme',
+      text: 'Entwicklung stabiler APIs und Backend-Architekturen mit klar definierten Schnittstellen und nachvollziehbarer Datenverarbeitung.',
+    },
+    {
+      title: 'Produkt-Prototypen und Minimal Viable Products (MVPs)',
+      text: 'Technische Umsetzung von Produktideen als Prototyp oder Minimal Viable Product (MVP), um Konzepte schnell testbar zu machen.',
+    },
+    {
+      title: 'Bestehende Systeme verbessern',
+      text: 'Analyse und Weiterentwicklung vorhandener Anwendungen, um Struktur, Stabilität und Wartbarkeit zu verbessern.',
+    },
+  ];
+
   return (
     <div className="site-shell">
       <Header />
       <main className="page-content">
         <section id="home" className="hero-section section-shell">
-          <div className="hero-grid">
-            <div className="hero-copy">
-              <span className="section-kicker">
-                Fullstack-Entwicklung mit Fokus auf .NET und React
-              </span>
-              <h1>
-                Technische Umsetzung mit Substanz, Klarheit und hohem
-                Qualitätsanspruch.
-              </h1>
-              <p className="hero-lead">
-                Ich entwickle moderne Webanwendungen und belastbare
-                Softwarelösungen mit starkem Backend-Fokus, sauberer Struktur
-                und einem klaren Blick für Business-Anforderungen, Wartbarkeit
-                und nachhaltige Weiterentwicklung.
-              </p>
-              <div className="hero-points">
-                <span>
-                  Strukturierte Umsetzung statt kurzfristiger Workarounds
-                </span>
-                <span>
-                  Offene Kommunikation, Transparenz und verlässliche
-                  Zusammenarbeit
-                </span>
-                <span>Technische Tiefe in Entwicklung und IT-Sicherheit</span>
-                <span>
-                  Saubere, wartbare Lösungen mit Blick auf Performance und
-                  Skalierbarkeit
-                </span>
-              </div>
-              <div className="hero-actions">
-                <a className="button button-primary" href="#contact">
-                  Kontakt aufnehmen
-                </a>
-                <a className="button button-secondary" href="#projects">
-                  Schwerpunkte ansehen
-                </a>
-              </div>
+          <div className="section-header hero-header">
+            <div className="hero-copy hero-copy--wide">
+              <span className="section-kicker">Leistungen</span>
+              <h1>Leistungen</h1>
             </div>
-            <aside className="hero-panel">
-              <div className="hero-panel-card">
-                <span className="eyebrow">Positionierung</span>
+          </div>
 
-                <p>
-                  Fullstack-Entwickler mit Schwerpunkt Backend. Erfahrung in
-                  Softwareentwicklung, Cyber-Sicherheit und technischer
-                  Produktumsetzung.
-                </p>
-              </div>
-              <div className="hero-metrics">
-                <div className="metric-card">
-                  <strong>8 Jahre</strong>
-                  <span>.NET und C# in der Praxis</span>
-                </div>
-                <div className="metric-card">
-                  <strong>5 Jahre</strong>
-                  <span>Unity-Erfahrung bis 2025</span>
-                </div>
-                <div className="metric-card">
-                  <strong>M.Sc.</strong>
-                  <span>Cyber-Sicherheit, Abschluss 2023</span>
-                </div>
-              </div>
-            </aside>
+          <div className="body-copy hero-body">
+            <p>
+              Ich bin freiberuflicher Softwareentwickler und biete folgende
+              Leistungen an.
+            </p>
+            {services.map((service) => (
+              <p key={service.title}>
+                <strong>{service.title}:</strong> {service.text}
+              </p>
+            ))}
           </div>
         </section>
 
+        <Scenarios />
+
         <Aboutme />
-        <Skills />
-        <Projects />
-        <Technologies />
         <Contact />
       </main>
-      <section className="legal-strip section-shell">
-        <div className="legal-strip__inner">
-          <span>© {new Date().getFullYear()} Sebastian Albert</span>
-          <Link to="/impressum">Impressum</Link>
-        </div>
-      </section>
+      <LegalStrip />
       <Footer />
     </div>
   );
 }
 
-function LegalPage() {
+function LegalPage({ children }) {
   return (
     <div className="site-shell">
       <Header />
       <main className="page-content">
-        <section className="section-shell legal-page">
-          <Impressum />
-        </section>
+        <section className="section-shell legal-page">{children}</section>
       </main>
+      <LegalStrip />
       <Footer />
     </div>
   );
@@ -161,7 +126,22 @@ function App() {
       <ScrollHandler />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/impressum" element={<LegalPage />} />
+        <Route
+          path="/impressum"
+          element={
+            <LegalPage>
+              <Impressum />
+            </LegalPage>
+          }
+        />
+        <Route
+          path="/datenschutz"
+          element={
+            <LegalPage>
+              <Datenschutz />
+            </LegalPage>
+          }
+        />
       </Routes>
     </Router>
   );
