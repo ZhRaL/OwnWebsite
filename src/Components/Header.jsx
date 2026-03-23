@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Icon2 from '../assets/Logo_Final2.png';
 import HeaderElement from './HeaderElement';
 
@@ -11,8 +11,9 @@ const navigationItems = [
 ];
 
 const Header = () => {
+  const location = useLocation();
   const [isHiddenOnMobile, setIsHiddenOnMobile] = useState(false);
-  const [activeSection] = useState('');
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -54,9 +55,39 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    // Kein aktives Section-Highlighting, steigt per Design aus.
-    return undefined;
-  }, []);
+    if (location.pathname !== '/') {
+      setActiveSection('');
+      return undefined;
+    }
+
+    const updateActiveSection = () => {
+      const triggerLine = window.innerHeight * 0.5;
+      let nextActiveSection = navigationItems[0]?.targetId ?? '';
+
+      navigationItems.forEach(({ targetId }) => {
+        const element = document.getElementById(targetId);
+        if (!element) {
+          return;
+        }
+
+        const { top } = element.getBoundingClientRect();
+        if (top <= triggerLine) {
+          nextActiveSection = targetId;
+        }
+      });
+
+      setActiveSection(nextActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, [location.pathname]);
 
   return (
     <header
@@ -82,7 +113,7 @@ const Header = () => {
         >
           {navigationItems.map((item) => (
             <HeaderElement
-              active={false}
+              active={activeSection === item.targetId}
               key={item.targetId}
               targetId={item.targetId}
               title={item.title}

@@ -11,7 +11,6 @@ const Datenschutz = () => {
           Website gemäß DSGVO.
         </p>
       </div>
-
       <div className="service-grid">
         <article className="service-card">
           <h3>1. Verantwortlicher</h3>

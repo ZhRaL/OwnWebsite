@@ -15,9 +15,9 @@ const scenarios = [
   },
   {
     title:
-      'Du nutzt bereits Software, aber irgendetwas daran funktioniert nicht richtig oder fühlt sich kompliziert an.',
+      'Du möchtest Abläufe in deinem Unternehmen digitalisieren oder wiederkehrende Aufgaben automatisieren.',
     description:
-      'Ich helfe dabei, bestehende Anwendungen zu verbessern, Probleme zu beheben und Abläufe einfacher und zuverlässiger zu machen.',
+      'Ich entwickle Software, die dir hilft, Prozesse zu vereinfachen, Zeit zu sparen und Fehler zu reduzieren – damit du dich auf dein eigentliches Geschäft konzentrieren kannst.',
   },
   {
     title:
