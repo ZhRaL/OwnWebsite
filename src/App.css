@@ -5,7 +5,9 @@
 }
 
 .site-header {
-  transition: transform 220ms ease, opacity 220ms ease;
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease;
 }
 
 .page-content {
@@ -130,6 +132,83 @@ section[id] {
 .content-section {
   padding: 36px 40px;
   margin-bottom: 24px;
+}
+
+.scenarios-accordion {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.accordion-item {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.accordion-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.accordion-trigger {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 20px;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.accordion-trigger:hover {
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.accordion-icon {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.accordion-item.is-open .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  padding: 0 20px 18px;
+  color: #334155;
+  line-height: 1.75;
+  font-size: 0.97rem;
+}
+
+.accordion-panel p {
+  margin: 0;
 }
 
 .section-header {
@@ -370,7 +449,9 @@ section[id] {
   background: #fff;
   padding: 14px 16px;
   color: #0f172a;
-  transition: border-color 160ms ease, box-shadow 160ms ease;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .field input:focus,

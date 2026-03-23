@@ -13,6 +13,7 @@ import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Impressum from './Components/Impressum';
 import LegalStrip from './Components/LegalStrip';
+import Scenarios from './Components/Scenarios';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -83,7 +84,10 @@ function HomePage() {
           </div>
 
           <div className="body-copy hero-body">
-            <p>Ich bin freiberuflicher Softwareentwickler und biete folgende Leistungen an.</p>
+            <p>
+              Ich bin freiberuflicher Softwareentwickler und biete folgende
+              Leistungen an.
+            </p>
             {services.map((service) => (
               <p key={service.title}>
                 <strong>{service.title}:</strong> {service.text}
@@ -91,6 +95,8 @@ function HomePage() {
             ))}
           </div>
         </section>
+
+        <Scenarios />
 
         <Aboutme />
         <Contact />
@@ -106,9 +112,7 @@ function LegalPage({ children }) {
     <div className="site-shell">
       <Header />
       <main className="page-content">
-        <section className="section-shell legal-page">
-          {children}
-        </section>
+        <section className="section-shell legal-page">{children}</section>
       </main>
       <LegalStrip />
       <Footer />
