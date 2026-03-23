@@ -4,7 +4,7 @@ import Icon2 from '../assets/Logo_Final2.png';
 import HeaderElement from './HeaderElement';
 
 const navigationItems = [
-  { title: 'Start', targetId: 'home' },
+  { title: 'Leistungen', targetId: 'home' },
   { title: 'Über mich', targetId: 'about' },
   { title: 'Kontakt', targetId: 'contact' },
 ];
@@ -81,14 +81,24 @@ const Header = () => {
 
     sections.forEach((section) => observer.observe(section));
 
+    const handleTopState = () => {
+      if (window.scrollY <= 24) {
+        setActiveSection('home');
+      }
+    };
+
+    window.addEventListener('scroll', handleTopState, { passive: true });
+    handleTopState();
+
     return () => {
       observer.disconnect();
+      window.removeEventListener('scroll', handleTopState);
     };
   }, []);
 
   return (
     <header
-      className={`site-header sticky top-0 z-50 border-b border-slate-200/80 bg-white/92 backdrop-blur-xl ${
+      className={`site-header sticky top-0 z-50 border-b border-slate-200 bg-white ${
         isHiddenOnMobile ? 'site-header--hidden' : ''
       }`}
     >

@@ -1,6 +1,6 @@
 const Impressum = () => {
   return (
-    <section id="impressum" className="content-section section-shell">
+    <section id="impressum" className="content-section">
       <div className="section-header">
         <div>
           <span className="section-kicker">Impressum</span>

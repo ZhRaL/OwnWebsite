@@ -69,6 +69,14 @@ section[id] {
   margin-bottom: 0;
 }
 
+.hero-body {
+  max-width: 900px;
+}
+
+.hero-body p:last-child {
+  margin-bottom: 0;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -305,7 +313,8 @@ section[id] {
 }
 
 .contact-card a,
-.legal-strip a {
+.legal-strip a,
+.service-card a {
   color: #0f172a;
   font-weight: 700;
 }
@@ -383,6 +392,12 @@ section[id] {
   justify-content: space-between;
   gap: 16px;
   color: #475569;
+}
+
+.legal-strip__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .site-footer {
@@ -526,5 +541,9 @@ section[id] {
   .legal-strip__inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .legal-strip__links {
+    width: 100%;
   }
 }

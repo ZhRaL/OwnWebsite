@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import {
   BrowserRouter as Router,
-  Link,
   Route,
   Routes,
   useLocation,
@@ -9,9 +8,11 @@ import {
 import './App.css';
 import Aboutme from './Components/Aboutme';
 import Contact from './Components/Contact/Contact';
+import Datenschutz from './Components/Datenschutz';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Impressum from './Components/Impressum';
+import LegalStrip from './Components/LegalStrip';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -76,16 +77,17 @@ function HomePage() {
         <section id="home" className="hero-section section-shell">
           <div className="section-header hero-header">
             <div className="hero-copy hero-copy--wide">
-              <h1>Webplattformen, APIs und technische Produkt-Prototypen</h1>
+              <span className="section-kicker">Leistungen</span>
+              <h1>Leistungen</h1>
             </div>
           </div>
 
-          <div className="service-grid">
+          <div className="body-copy hero-body">
+            <p>Ich bin freiberuflicher Softwareentwickler und biete folgende Leistungen an.</p>
             {services.map((service) => (
-              <article key={service.title} className="service-card">
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
-              </article>
+              <p key={service.title}>
+                <strong>{service.title}:</strong> {service.text}
+              </p>
             ))}
           </div>
         </section>
@@ -93,26 +95,22 @@ function HomePage() {
         <Aboutme />
         <Contact />
       </main>
-      <section className="legal-strip section-shell">
-        <div className="legal-strip__inner">
-          <span>© {new Date().getFullYear()} Sebastian Albert</span>
-          <Link to="/impressum">Impressum</Link>
-        </div>
-      </section>
+      <LegalStrip />
       <Footer />
     </div>
   );
 }
 
-function LegalPage() {
+function LegalPage({ children }) {
   return (
     <div className="site-shell">
       <Header />
       <main className="page-content">
         <section className="section-shell legal-page">
-          <Impressum />
+          {children}
         </section>
       </main>
+      <LegalStrip />
       <Footer />
     </div>
   );
@@ -124,7 +122,22 @@ function App() {
       <ScrollHandler />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/impressum" element={<LegalPage />} />
+        <Route
+          path="/impressum"
+          element={
+            <LegalPage>
+              <Impressum />
+            </LegalPage>
+          }
+        />
+        <Route
+          path="/datenschutz"
+          element={
+            <LegalPage>
+              <Datenschutz />
+            </LegalPage>
+          }
+        />
       </Routes>
     </Router>
   );
